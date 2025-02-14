@@ -36,20 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="240dp"
-        android:text="@string/presença"
+        android:text="@string/Receitas"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_name" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_present">
-
-
-   </RadioGroup>
-
 
     <TextView
         android:id="@+id/text_receita"
@@ -75,7 +65,36 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_name" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_present">
 
+
+        <RadioButton
+            android:id="@+id/radio_Faceis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:hint="@string/Faceis"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/text_present"
+            app:layout_constraintTop_toBottomOf="@+id/radio_present" />
+
+        <RadioButton
+            android:id="@+id/radio_Curtidas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:hint="@string/presente"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/text_present"
+            app:layout_constraintTop_toBottomOf="@+id/text_present" />
+
+    </RadioGroup>
     <Button
         android:id="@+id/button_enviar"
         android:layout_width="match_parent"
@@ -88,28 +107,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.903" />
-
-    <RadioButton
-        android:id="@+id/radio_absent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:hint="@string/ausente"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/text_present"
-        app:layout_constraintTop_toBottomOf="@+id/radio_present" />
-
-    <RadioButton
-        android:id="@+id/radio_present"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:hint="@string/presente"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/text_present"
-        app:layout_constraintTop_toBottomOf="@+id/text_present" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
