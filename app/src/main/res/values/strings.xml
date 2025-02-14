@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AppConvidados</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Gabriel</string>
+    <string name="nav_header_subtitle">Gabriel@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="action_settings2" />
+    <string name="todos_os_convidados">Todos as receitas\n</string>
+    <string name="nome">nome da receita</string>
+    <string name="presença">Receitas \n</string>
+    <string name="presente">Receitas Curtidas</string>
+    <string name="ausente">Receitas Faceis</string>
+    <string name="enviar">Salvar</string>
+    <string name="menu_present">Curtidas</string>
+    <string name="menu_absent">Faceis</string>
+    <string name="ingredientes">ingredientes</string>
+</resources>
