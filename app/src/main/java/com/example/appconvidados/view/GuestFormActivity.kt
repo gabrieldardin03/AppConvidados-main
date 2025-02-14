@@ -36,7 +36,7 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
         viewModel = ViewModelProvider(this)[GuestFormViewModel::class.java]
 
         binding.buttonEnviar.setOnClickListener(this)
-        binding.radioPresent.isChecked = true
+        binding.radioCurtidas.isChecked = true
 
         observe()
         loadData()
@@ -46,9 +46,10 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         if(view.id == R.id.button_enviar){
             val name = binding.editTextName.text.toString()
-            val presence = binding.radioPresent.isChecked
+            val presence = binding.radioCurtidas.isChecked
+            val ingredientes=binding.editTextIngredientes.toString()
 
-            val model = GuestModel(guestId, name, presence,)
+            val model = GuestModel(guestId, name, presence, ingredientes  )
             viewModel.save(model)
             finish()
         }
@@ -58,9 +59,9 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
         viewModel.guest.observe(this, Observer {
             binding.editTextName.setText(it.name)
             if(it.presence){
-                binding.radioPresent.isChecked = true
+                binding.radioCurtidas.isChecked = true
             }else{
-                binding.radioAbsent.isChecked = true
+                binding.radioCurtidas.isChecked = true
             }
         })
 

@@ -98,8 +98,9 @@ class GuestRepository private constructor(context: Context) {
                 while (cursor.moveToNext()) {
                     val name = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.NAME))
                     val presence = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.PRESENCE))
+                    val ingredientes = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.INGREDIENTES))
 
-                    guest = GuestModel(id, name, presence == 1, ingredientes,  )
+                    guest = GuestModel(id, name, presence == 1, ingredientes ,   )
                 }
             }
             cursor.close()
@@ -135,9 +136,10 @@ class GuestRepository private constructor(context: Context) {
                         cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.NAME))
                     val presence =
                         cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.PRESENCE))
+                    val ingredientes = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.INGREDIENTES))
 
                     //construindo o modelo
-                    val guest = GuestModel(id, name, presence == 1,)
+                    val guest = GuestModel(id, name, presence == 1,ingredientes)
                     list.add(guest)
                 }
             }
@@ -177,9 +179,9 @@ class GuestRepository private constructor(context: Context) {
                     val id = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.ID))
                     val name = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.NAME))
                     val presence = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.PRESENCE))
-
+                    val ingredientes = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.INGREDIENTES))
                     //Construindo o modelo
-                    val guest = GuestModel(id, name, presence == 1,)
+                    val guest = GuestModel(id, name, presence == 1,ingredientes)
                     list.add(guest)
                 }
             }
@@ -215,9 +217,9 @@ class GuestRepository private constructor(context: Context) {
                     val id = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.ID))
                     val name = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.NAME))
                     val presence = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.PRESENCE))
-
+                    val ingredientes = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.INGREDIENTES))
                     //Construindo o modelo
-                    val guest = GuestModel(id, name, presence == 1,)
+                    val guest = GuestModel(id, name, presence == 1, ingredientes)
                     list.add(guest)
                 }
             }
