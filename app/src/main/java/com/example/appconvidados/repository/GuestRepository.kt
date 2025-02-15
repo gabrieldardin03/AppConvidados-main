@@ -49,6 +49,7 @@ class GuestRepository private constructor(context: Context) {
             val values = ContentValues()
             values.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, presence)
             values.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
+            values.put(DataBaseConstants.GUEST.COLUMNS.INGREDIENTES, guest.ingredientes)
 
             val selection = DataBaseConstants.GUEST.COLUMNS.ID + " = ?"
             val args = arrayOf(guest.id.toString())
@@ -86,8 +87,10 @@ class GuestRepository private constructor(context: Context) {
             val projection = arrayOf(
                 DataBaseConstants.GUEST.COLUMNS.ID,
                 DataBaseConstants.GUEST.COLUMNS.NAME,
-                DataBaseConstants.GUEST.COLUMNS.PRESENCE
-            )
+                DataBaseConstants.GUEST.COLUMNS.PRESENCE,
+                DataBaseConstants.GUEST.COLUMNS.INGREDIENTES
+
+                )
 
             val selection = DataBaseConstants.GUEST.COLUMNS.ID + " = ?"
             val args = arrayOf(id.toString())
@@ -100,7 +103,7 @@ class GuestRepository private constructor(context: Context) {
                     val presence = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.PRESENCE))
                     val ingredientes = cursor.getString(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.INGREDIENTES))
 
-                    guest = GuestModel(id, name, presence == 1, ingredientes ,   )
+                    guest = GuestModel(id, name, presence == 1, ingredientes    )
                 }
             }
             cursor.close()
@@ -121,7 +124,10 @@ class GuestRepository private constructor(context: Context) {
             val projection = arrayOf(
                 DataBaseConstants.GUEST.COLUMNS.ID,
                 DataBaseConstants.GUEST.COLUMNS.NAME,
-                DataBaseConstants.GUEST.COLUMNS.PRESENCE
+                DataBaseConstants.GUEST.COLUMNS.PRESENCE,
+                DataBaseConstants.GUEST.COLUMNS.INGREDIENTES
+
+
             )
 
             val cursor = db.query(
@@ -161,7 +167,9 @@ class GuestRepository private constructor(context: Context) {
             val projection = arrayOf(
                 DataBaseConstants.GUEST.COLUMNS.ID,
                 DataBaseConstants.GUEST.COLUMNS.NAME,
-                DataBaseConstants.GUEST.COLUMNS.PRESENCE
+                DataBaseConstants.GUEST.COLUMNS.PRESENCE,
+                DataBaseConstants.GUEST.COLUMNS.INGREDIENTES
+
             )
             /*
             val selection = DataBaseConstants.GUEST.COLUMNS.PRESENCE +" = ?"
@@ -171,8 +179,7 @@ class GuestRepository private constructor(context: Context) {
             )
             */
             //Recuperando com SQL
-            val cursor =
-                db.rawQuery("SELECT id, name, presence FROM guest WHERE presence = 1", null)
+            val cursor = db.rawQuery("SELECT id, name, presence, ingredientes FROM ${DataBaseConstants.GUEST.TABLE_NAME} WHERE presence = 1", null)
 
             if (cursor != null && cursor.count > 0) {
                 while (cursor.moveToNext()) {
@@ -203,15 +210,17 @@ class GuestRepository private constructor(context: Context) {
             val projection = arrayOf(
                 DataBaseConstants.GUEST.COLUMNS.ID,
                 DataBaseConstants.GUEST.COLUMNS.NAME,
-                DataBaseConstants.GUEST.COLUMNS.PRESENCE
+                DataBaseConstants.GUEST.COLUMNS.PRESENCE,
+                DataBaseConstants.GUEST.COLUMNS.INGREDIENTES
+
+
             )
 
 //            val selection = DataBaseConstants.GUEST.COLUMNS.PRESENCE + " = ?"
 //            val args = arrayOf("1")
 //            val cursor = db.query(DataBaseConstants.GUEST.TABLE_NAME, projection, selection, args, null, null, null)
 
-            val cursor = db.rawQuery("SELECT id, name, presence FROM Guest WHERE presence == 0", null)
-
+            val cursor = db.rawQuery("SELECT id, name, presence, ingredientes FROM ${DataBaseConstants.GUEST.TABLE_NAME} WHERE presence = 0", null)
             if (cursor != null && cursor.count > 0) {
                 while (cursor.moveToNext()) {
                     val id = cursor.getInt(cursor.getColumnIndex(DataBaseConstants.GUEST.COLUMNS.ID))

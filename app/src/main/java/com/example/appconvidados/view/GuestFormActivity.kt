@@ -58,6 +58,8 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
     private fun observe(){
         viewModel.guest.observe(this, Observer {
             binding.editTextName.setText(it.name)
+            binding.editTextIngredientes.setText(it.ingredientes)
+
             if(it.presence){
                 binding.radioCurtidas.isChecked = true
             }else{
