@@ -19,7 +19,7 @@ class GuestViewHolder(private val bind: RowGuestBinding, private val listener: O
 
         bind.textName.setOnLongClickListener {
             AlertDialog.Builder(itemView.context)
-                .setTitle("Remoção do convidado")
+                .setTitle("Remoção de receita")
                 .setMessage("Deseja remover?")
                 .setPositiveButton("Sim"
                 ) { dialog, which ->

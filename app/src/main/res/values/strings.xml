@@ -11,14 +11,15 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="action_settings2" />
-    <string name="todos_os_convidados">Todos as receitas\n</string>
+    <string name="todas_as_receitas">Todos as receitas\n</string>
     <string name="nome">nome da receita</string>
     <string name="Receitas">Receitas \n</string>
     <string name="presente">Receitas Curtidas</string>
     <string name="faceis">Receitas Faceis</string>
     <string name="enviar">Salvar</string>
-    <string name="menu_present">Curtidas</string>
-    <string name="menu_absent">Faceis</string>
+    <string name="menu_curtidas">Curtidas</string>
+    <string name="menu_faceis">Faceis</string>
     <string name="ingredientes">ingredientes</string>
     <string name="Faceis">Receitas Faceis</string>
+    <string name="digite_os_ingredientes">Digite os ingredientes</string>
 </resources>

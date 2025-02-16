@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,6 +9,7 @@
     android:layout_margin="32dp"
     tools:context=".view.GuestFormActivity">
 
+    <!-- Name Section -->
     <TextView
         android:id="@+id/text_name"
         android:layout_width="0dp"
@@ -28,24 +30,15 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_name"/>
+        app:layout_constraintTop_toBottomOf="@id/text_name"/>
 
-    <TextView
-        android:id="@+id/textSelecao"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="240dp"
-        android:text="@string/Receitas"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text_name" />
+    <!-- Ingredients Section -->
 
     <TextView
         android:id="@+id/text_receita"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="196dp"
         android:text="@string/ingredientes"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,58 +50,67 @@
         android:id="@+id/edit_text_ingredientes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
         android:autofillHints="name"
         android:inputType="text"
         android:textSize="24sp"
+        android:contentDescription="@string/digite_os_ingredientes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_name" />
+        app:layout_constraintTop_toBottomOf="@id/text_receita"/>
+
+
+    <!-- Recipe Selection Section -->
+
+    <!-- Submit Button -->
+
+    <TextView
+        android:id="@+id/textSelecao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/Receitas"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_ingredientes" />
 
     <RadioGroup
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textSelecao">
-
 
         <RadioButton
             android:id="@+id/radio_Curtidas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="56dp"
-            android:hint="@string/presente"
+            android:layout_marginStart="16dp"
+            android:text="@string/presente"
             android:textSize="24sp" />
 
         <RadioButton
             android:id="@+id/radio_Faceis"
-            android:layout_width="222dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="4dp"
-            android:hint="@string/Faceis"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="@+id/text_present"
-            app:layout_constraintTop_toBottomOf="@+id/radio_present" />
-
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Faceis"
+            android:textSize="24sp" />
     </RadioGroup>
 
     <Button
         android:id="@+id/button_enviar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/enviar"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903" />
-
-
+        app:layout_constraintTop_toBottomOf="@id/radio_Faceis"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

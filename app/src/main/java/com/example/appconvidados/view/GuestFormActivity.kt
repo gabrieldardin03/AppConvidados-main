@@ -47,9 +47,9 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
         if(view.id == R.id.button_enviar){
             val name = binding.editTextName.text.toString()
             val presence = binding.radioCurtidas.isChecked
-            val ingredientes = binding.editTextIngredientes.toString()
+            val ingredientes = binding.editTextIngredientes.text.toString() // Correção aqui
 
-            val model = GuestModel(guestId, name, presence, ingredientes  )
+            val model = GuestModel(guestId, name, presence, ingredientes)
             viewModel.save(model)
             finish()
         }
