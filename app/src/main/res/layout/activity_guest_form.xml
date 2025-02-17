@@ -53,10 +53,12 @@
         android:autofillHints="name"
         android:inputType="text"
         android:textSize="24sp"
+        android:textColor="@color/blue"
         android:contentDescription="@string/digite_os_ingredientes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_receita"/>
+
 
 
     <!-- Recipe Selection Section -->
